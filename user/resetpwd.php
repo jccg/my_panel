@@ -30,32 +30,7 @@ $uid  = $_GET['uid'];
         <a href="#"><b><?php echo $site_name;  ?></b></a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">重置密码</p>
-
-            <input type="hidden" id="code" name="code" class="form-control" value="<?php echo $code;?>" required autofocus>
-            <input type="hidden" id="uid" name="uid" class="form-control" value="<?php echo $uid;?>" required autofocus>
-
-            <div class="form-group has-feedback">
-                <input id="email" name="Email" type="text" class="form-control" placeholder="Email"/>
-                <span  class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-
-            <div class="form-group has-feedback">
-                <button type="submit" id="reset" class="btn btn-primary btn-block btn-flat">重置</button>
-            </div>
-    
-            <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
-                <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-info"></i> 成功!</h4>
-                <p id="msg-success-p"></p>
-            </div>
-    
-            <div id="msg-error" class="alert alert-warning alert-dismissable" style="display: none;">
-                <button type="button" class="close" id="error-close" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-warning"></i> 出错了!</h4>
-                <p id="msg-error-p"></p>
-            </div>
-
+        <p class="login-box-msg">重置密码请在论坛上pm我</p>
         <a href="login.php" class="text-center">返回登录</a>
 
     </div><!-- /.login-box-body -->

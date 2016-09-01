@@ -64,7 +64,7 @@ require_once '_main.php'; ?>
                     <div class="box box-solid">
                         <div class="box-header">
                             <i class="fa fa-align-left"></i>
-                            <h3 class="box-title">Shadowsocks连接密码修改</h3>
+                            <h3 class="box-title">连接密码修改</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
 

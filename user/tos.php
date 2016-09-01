@@ -66,7 +66,6 @@ require_once '../lib/config.php';
     <h3>其它</h3>
     <p>
     <ul>
-        <li>本站仅限人类及猫注册使用。</li>
         <li>TOS更新时用户需要遵守最新TOS。</li>
     </ul>
     </p>
@@ -75,7 +74,7 @@ require_once '../lib/config.php';
 
 <footer class="footer">
     <div class="container">
-        <p class="text-muted"><strong>Copyright &copy; <?php echo date('Y'); ?> <a href="#"><?php echo $site_name;  ?></a>.</strong> All rights reserved. Powered by  <b>ss-panel</b> <?php echo $version; ?> </p>
+        <p class="text-muted"><strong>如有疑问可以到论坛去讨论</strong> </p>
     </div>
 </footer>
 

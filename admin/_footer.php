@@ -6,8 +6,6 @@
         echo $Runtime->SpendTime()."ms";
         ?>
     </div>
-    <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href="#"><?php echo $site_name;  ?></a> </strong>
-            All rights reserved.  Powered by  <b>ss-panel</b><?php echo $version; ?>
 </footer>
 </div><!-- ./wrapper -->
 <?php

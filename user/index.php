@@ -44,8 +44,8 @@ $unix_time = $oo->get_last_unix_time();
                             <h3 class="box-title">公告&FAQ</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                            <p>流量不会重置，可以通过签到获取流量。</p> 
-                            <p>流量可以通过签到获取，基本每天可以用1G流量。</p> 
+                            <p>测试期间每天清空流量使用记录。</p> 
+                            <p>后续如有合租意向，请到D版帖子中回帖。</p> 
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (right) -->
