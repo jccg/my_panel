@@ -1,7 +1,8 @@
 ss-panel
 ========
 
-[![Join the chat at https://gitter.im/orvice/ss-panel](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orvice/ss-panel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Fork by ss-panel
+https://github.com/orvice/ss-panel
 
 ### Requirements
 * PHP >= 5.4
@@ -24,8 +25,4 @@ $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar  install
 ```
 
-### Thanks to
-
-* [AdminLTE](https://github.com/almasaeed2010/AdminLTE)
-* [Medoo](https://github.com/catfan/Medoo)
 
