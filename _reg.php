@@ -1,5 +1,5 @@
 <?php
-require_once '../lib/config.php';
+require_once './lib/config.php';
 $email = $_POST['email'];
 $email = strtolower($email);
 $passwd = $_POST['passwd'];

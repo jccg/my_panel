@@ -1,5 +1,5 @@
 <?php
-require_once '../lib/config.php';
+require_once './lib/config.php';
 require_once '_check.php';
 
 $nowpwd = $_POST['nowpwd'];

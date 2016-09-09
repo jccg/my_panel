@@ -1,5 +1,5 @@
 <?php
-require_once '../lib/config.php';
+require_once './lib/config.php';
 require_once '_check.php';
 //权限检查
 if(!$oo->is_able_to_check_in()){

@@ -1,5 +1,7 @@
 <?php
-require_once '../lib/config.php';
+require_once './lib/config.php';
+$code = $_GET['code'];
+$uid  = $_GET['uid'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,12 +10,12 @@ require_once '../lib/config.php';
     <title><?php echo $site_name;  ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
-    <link href="../asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="./asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="../asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="../asset/css/blue.css" rel="stylesheet" type="text/css" />
+    <link href="./asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="./asset/css/blue.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,52 +30,47 @@ require_once '../lib/config.php';
         <a href="#"><b><?php echo $site_name;  ?></b></a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">登录到用户中心</p>
+        <p class="login-box-msg">重置密码</p>
 
-            <form>
-            <div class="form-group has-feedback">
-                <input id="email" name="Email" type="text" class="form-control" placeholder="邮箱"/>
-                <span  class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input id="passwd" name="Password" type="password" class="form-control" placeholder="密码"/>
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            </form>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input id="remember_me" value="week" type="checkbox"> 记住我
-                        </label>
-                    </div>
-                </div><!-- /.col -->
-                <div class="col-xs-4">
-                    <button id="login" type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
-                </div><!-- /.col -->
-            </div>
-            <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
-                <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-info"></i> 登录成功!</h4>
-                <p id="msg-success-p"></p>
-            </div>
-            <div id="msg-error" class="alert alert-warning alert-dismissable" style="display: none;">
-                <button type="button" class="close" id="error-close" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-warning"></i> 出错了!</h4>
-                <p id="msg-error-p"></p>
-            </div>
-        <a href="resetpwd.php">忘记密码</a><br>
-        <a href="register.php" class="text-center">注册个帐号</a>
+        <div class="form-group has-feedback">
+            <input id="email" name="Email" type="text" class="form-control" placeholder="Email"/>
+            <span  class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="password" id="password" class="form-control" placeholder="密码"/>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="password" id="repasswd" class="form-control" placeholder="重复密码"/>
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            <button type="submit" id="reset" class="btn btn-primary btn-block btn-flat">确认重置</button>
+        </div>
+        
+        <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
+            <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-info"></i> 成功!</h4>
+            <p id="msg-success-p"></p>
+        </div>
+
+        <div id="msg-error" class="alert alert-warning alert-dismissable" style="display: none;">
+            <button type="button" class="close" id="error-close" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-warning"></i> 出错了!</h4>
+            <p id="msg-error-p"></p>
+        </div>
+        <a href="login.php" class="text-center">返回登录</a>
 
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
 
 <!-- jQuery 2.1.3 -->
-<script src="../asset/js/jQuery.min.js"></script>
+<script src="./asset/js/jQuery.min.js"></script>
 <!-- Bootstrap 3.3.2 JS -->
-<script src="../asset/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./asset/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- iCheck -->
-<script src="../asset/js/icheck.min.js" type="text/javascript"></script>
+<script src="./asset/js/icheck.min.js" type="text/javascript"></script>
 <script>
     $(function () {
         $('input').iCheck({
@@ -86,18 +83,19 @@ require_once '../lib/config.php';
     // $("#msg-success").hide(100);
 </script>
 <script>
-
     $(document).ready(function(){
-        function login(){
+        function reset(){
             $.ajax({
-                type:"POST",
-                url:"_login.php",
-                dataType:"json",
-                data:{
-                    email: $("#email").val(),
-                    passwd: $("#passwd").val(),
-                    remember_me: $("#remember_me").val()
-                },
+                        type:"POST",
+                        url:"_resetpwdtwo.php",
+                        dataType:"json",
+                        data:{
+                            uid: "<?php echo $uid ?>",
+                            code: "<?php echo $code ?>",
+                            email: $("#email").val(),
+                            password: $("#password").val(),
+                            repasswd: $("#repasswd").val(),
+                        },
                 success:function(data){
                     if(data.ok){
                         $("#msg-error").hide(100);
@@ -121,13 +119,13 @@ require_once '../lib/config.php';
         }
         $("html").keydown(function(event){
             if(event.keyCode==13){
-                login();
+                reset();
             }
         });
-        $("#login").click(function(){
-            login();
+        $("#reset").click(function(){
+            reset();
         });
-         $("#ok-close").click(function(){
+        $("#ok-close").click(function(){
             $("#msg-success").hide(100);
         });
         $("#error-close").click(function(){
@@ -145,5 +143,6 @@ require_once '../lib/config.php';
                     return str;
             }
 </script>
+
 </body>
 </html>

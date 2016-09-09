@@ -1,9 +1,9 @@
 <?php
 //设置编码
 header("content-type:text/html;charset=utf-8");
-require_once '../lib/config.php';
+require_once './lib/config.php';
 //mailgun
-require '../vendor/autoload.php';
+require './vendor/autoload.php';
 use Mailgun\Mailgun;
 $mg = new Mailgun($mailgun_key);
 $domain = $mailgun_domain;

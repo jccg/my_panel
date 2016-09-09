@@ -1,5 +1,5 @@
 <?php
-require_once '../lib/config.php';
+require_once './lib/config.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,12 +8,12 @@ require_once '../lib/config.php';
     <title><?php echo $site_name;  ?></title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
-    <link href="../asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="./asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="../asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="../asset/css/blue.css" rel="stylesheet" type="text/css" />
+    <link href="./asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="./asset/css/blue.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +25,7 @@ require_once '../lib/config.php';
 <body class="register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="../"><b><?php echo $site_name;  ?></b></a>
+        <a href="./"><b><?php echo $site_name;  ?></b></a>
     </div>
 
     <div class="register-box-body">
@@ -78,11 +78,11 @@ require_once '../lib/config.php';
 </div><!-- /.register-box -->
 
 <!-- jQuery 2.1.3 -->
-<script src="../asset/js/jQuery.min.js"></script>
+<script src="./asset/js/jQuery.min.js"></script>
 <!-- Bootstrap 3.3.2 JS -->
-<script src="../asset/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./asset/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- iCheck -->
-<script src="../asset/js/icheck.min.js" type="text/javascript"></script>
+<script src="./asset/js/icheck.min.js" type="text/javascript"></script>
 <script>
     $(function () {
         $('input').iCheck({

@@ -1,5 +1,5 @@
 <?php
-require_once '../lib/config.php';
+require_once './lib/config.php';
 require_once '_check.php';
 $invite = new \Ss\User\Invite($uid);
 if($U->InviteNum()==0){
