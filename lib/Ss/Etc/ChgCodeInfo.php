@@ -8,7 +8,8 @@ class ChgCodeInfo extends Db{
 
     function IsCodeOK(){
         if($this->db->has($this->table,[
-            "code" => $this->id
+            "code" => $this->id,
+            "status" => 0
         ])){
             return true;
         }else{
@@ -25,6 +26,10 @@ class ChgCodeInfo extends Db{
 
     function GetMoney(){
         return $this->GetCodeArray()['money'];
+    }
+    
+    function GetTime(){
+        return $this->GetCodeArray()['time'];
     }
 
     function Del(){

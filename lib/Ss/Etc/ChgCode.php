@@ -7,19 +7,21 @@ class ChgCode extends Db {
 
     private $table = "ss_chg_code";
 
-    function AddCode($money){
+    function AddCode($money,$time,$tag){
         $code = Comm::get_random_char(32);
         $this->db->insert($this->table,[
             "add_time" => time(),
             "code" => $code,
-            "money" => $money
+            "money" => $money,
+            "time" => $time,
+            "tag" => $tag
         ]);
         return $code;
     }
 
-    function AddManyCode($num,$money){
+    function AddManyCode($num,$money,$time,$tag){
         for($i=0;$i<$num;$i++){
-            $this->AddCode($money);
+            $this->AddCode($money,$time,$tag);
         }
     }
 
