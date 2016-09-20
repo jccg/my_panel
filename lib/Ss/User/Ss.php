@@ -71,6 +71,11 @@ class Ss {
         return $this->get_user_info_array()['last_check_in_time'];
     }
 
+    //get 到期时间
+    function get_expire_time(){
+        return $this->get_user_info_array()['expire_time'];
+    }
+    
     //check is able to check in
     function is_able_to_check_in(){
         $now = time();
@@ -96,6 +101,16 @@ class Ss {
         $transfer = $this->get_transfer_enable()+$transfer;
         $this->db->update("user",[
             "transfer_enable" => $transfer
+        ],[
+            "uid" => $this->uid
+        ]);
+    }
+    
+    //add time 添加有效期
+    function  add_time($money){
+        $all_time = $this->get_expire_time()+$money;
+        $this->db->update("user",[
+            "expire_time" => $all_time
         ],[
             "uid" => $this->uid
         ]);

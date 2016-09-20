@@ -20,6 +20,8 @@ $all_transfer = round($all_transfer,2);
 $unused_transfer = round($unused_transfer,2);
 //最后在线时间
 $unix_time = $oo->get_last_unix_time();
+//到期时间
+$u_expire_time = $oo->get_expire_time();
 ?>
 
     <!-- =============================================== -->
@@ -64,6 +66,7 @@ $unix_time = $oo->get_last_unix_time();
                             </div>
                             <p> 可用流量：<?php echo $all_transfer ."GB";?> </p>
                             <p> 剩余流量：<?php echo  $unused_transfer."GB";?> </p>
+                            <p> 到期时间：<code><?php echo date('Y-m-d H:i:s',$u_expire_time);?></code></p>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (left) -->
