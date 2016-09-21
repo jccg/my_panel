@@ -8,8 +8,8 @@ class ChgCodeInfo extends Db{
 
     function IsCodeOK(){
         if($this->db->has($this->table,[
-            "code" => $this->id,
-            "status" => 0
+            "code" => $this->id
+           // "status" => 0
         ])){
             return true;
         }else{
