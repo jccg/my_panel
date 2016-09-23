@@ -47,7 +47,10 @@ $u_expire_time = $oo->get_expire_time();
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             <p>测试期间每天清空流量使用记录。</p> 
-                            <p>后续如有合租意向，请到D版帖子中回帖。</p> 
+                            <p>后续如有合租意向，请到D版帖子中回帖。</p>
+                                                        <p>交费方法：在下面的地址购买充值码，然后在自助交费里面输入充值码即可。每个充值码会延长30天使用时间。流量限额会在29号修改为40g，每月清零 。</p>
+                                   <p>                     http://yunfaka.com/product/760B017B80928346 </p>
+                            
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (right) -->

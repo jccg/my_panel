@@ -124,6 +124,12 @@ require_once '_check.php';
                         <i class="fa fa-users"></i> <span>邀请好友</span>
                     </a>
                 </li>
+                
+                <li>
+                    <a href="charg.php">
+                        <i class="fa fa-align-left"></i> <span>自助交费</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
