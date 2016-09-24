@@ -41,7 +41,8 @@ class Reg {
             "invite_num" => $invite_num,
             "money" => '0',
             "#reg_date" =>  'NOW()',
-            "ref_by" => $ref_by
+            "ref_by" => $ref_by,
+            "expire_time" => time()
         ]);
     }
 

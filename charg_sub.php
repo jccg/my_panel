@@ -20,6 +20,8 @@ $varst = $dd->GetStatus();
 if(($vartt > 0)&& ($varst == 0)){
         $c->add_time($vartt);
         $dd->UpdateStatus($uid);
+        $c->update_ss_plan();
+
 }else{
     echo ' <script>alert("充值码错误!")</script> ';
     echo " <script>window.location='charg.php';</script> " ;

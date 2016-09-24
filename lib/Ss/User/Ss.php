@@ -106,6 +106,16 @@ class Ss {
         ]);
     }
     
+    //update ss plan
+    function update_ss_plan(){
+        $this->db->update("user",[
+            "plan" => "C",
+            "transfer_enable" => 42949672960
+        ],[
+            "uid" => $this->uid
+        ]);
+    }
+    
     //add time 添加有效期
     function  add_time($money){
         $all_time = $this->get_expire_time()+$money;
