@@ -19,6 +19,15 @@ class ChgCode extends Db {
         return $code;
     }
 
+    function GetCode($number){
+        $data = $this->db->select($this->table,"*",[
+            "status" => 0,
+            "soled" => 0,
+            "LIMIT" => $number
+        ]);
+        return $data;
+    }
+    
     function AddManyCode($num,$money,$time,$tag){
         for($i=0;$i<$num;$i++){
             $this->AddCode($money,$time,$tag);

@@ -24,8 +24,9 @@ $Users = new Ss\User\User();
                                 <tr>
                                     <th>ID</th>
                                     <th>用户名</th>
+                                    <th>plan</th>
                                     <th>邮箱</th>
-                                    <th>端口</th>
+                                    <th>poort</th>
                                     <th>总流量</th>
                                     <th>剩余流量</th>
                                     <th>已使用流量</th>
@@ -39,6 +40,7 @@ $Users = new Ss\User\User();
                                     <tr>
                                         <td>#<?php echo $rs['uid']; ?></td>
                                         <td><?php echo $rs['user_name']; ?></td>
+                                        <td><?php echo $rs['plan']; ?></td>
                                         <td><?php echo $rs['email']; ?></td>
                                         <td><?php echo $rs['port']; ?></td>
                                         <td><?php \Ss\Etc\Comm::flowAutoShow($rs['transfer_enable']); ?></td>

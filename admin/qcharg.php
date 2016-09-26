@@ -25,10 +25,10 @@ $codeInfo = new Ss\Etc\ChgCodeInfo();
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header">
-                            <h3 class="box-title">添加充值码</h3>
+                            <h3 class="box-title">查询充值码</h3>
                         </div><!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" method="post" action="charg_add_do.php">
+                        <form role="form" method="post" action="charg_query_do.php">
                             <div class="box-body">
 
                                 <div class="form-group">
@@ -36,32 +36,14 @@ $codeInfo = new Ss\Etc\ChgCodeInfo();
                                     <input  class="form-control" name="code_num" placeholder="数量"  >
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="cate_title">流量</label>
-                                    <input  class="form-control" name="code_money"  placeholder="每个充值码的流量" >
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="cate_title">时间</label>
-                                    <input  class="form-control" name="code_time" placeholder="每个充值码的时间"  >
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="cate_title">类别</label>
-                                    <input  class="form-control" name="code_tag" placeholder="自定义类型，金额"  >
-                                </div>
-
-
                             </div><!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" name="action" value="add" class="btn btn-primary">添加</button>
+                                <button type="submit" name="action" value="add" class="btn btn-primary">查询</button>
                             </div>
 
                         </form>
                     </div>
-                    
-                   
                     
                     
                 </div><!-- /.box -->

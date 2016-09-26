@@ -46,9 +46,9 @@ $u_expire_time = $oo->get_expire_time();
                             <h3 class="box-title">公告&FAQ</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                            <p>测试期间每天清空流量使用记录。</p> 
+                            <p>所有用户的流量每月1号清零</p> 
                             <p>后续如有合租意向，请到D版帖子中回帖。</p>
-                                                        <p>交费方法：在下面的地址购买充值码，然后在自助交费里面输入充值码即可。每个充值码会延长30天使用时间。流量限额会在29号修改为40g，每月清零 。</p>
+                                                        <p>交费方法：在下面的地址购买充值码，然后在自助交费里面输入充值码即可。每个充值码会延长30天使用时间。充值后流量限额会修改为40g，每月清零 。</p>
                                    <p>                     http://yunfaka.com/product/760B017B80928346 </p>
                             
                         </div><!-- /.box-body -->
@@ -74,26 +74,6 @@ $u_expire_time = $oo->get_expire_time();
                     </div><!-- /.box -->
                 </div><!-- /.col (left) -->
 
-
-
-                <div class="col-md-6">
-                    <div class="box box-solid">
-                        <div class="box-header">
-                            <h3 class="box-title">签到获取流量</h3>
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <p> 22小时内可以签到一次。</p>
-                            <?php  if($oo->is_able_to_check_in())  { ?>
-                                <p id="checkin-btn"> <button id="checkin" class="btn btn-success  btn-flat">签到</button></p>
-                            <?php  }else{ ?>
-                                <p><a class="btn btn-success btn-flat disabled" href="#">不能签到</a> </p>
-                            <?php  } ?>
-                            <p id="checkin-msg" ></p>
-                            <p>上次签到时间：<code><?php echo date('Y-m-d H:i:s',$oo->get_last_check_in_time());?></code></p>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-                </div><!-- /.col (right) -->
-
                 <div class="col-md-6">
                     <div class="box box-solid">
                         <div class="box-header">
@@ -114,26 +94,6 @@ $u_expire_time = $oo->get_expire_time();
 <?php
 require_once '_footer.php'; ?>
 
-<script>
-    $(document).ready(function(){
-        $("#checkin").click(function(){
-            $.ajax({
-                type:"GET",
-                url:"_checkin.php",
-                dataType:"json",
-                success:function(data){
-                    $("#checkin-msg").html(data.msg);
-                    $("#checkin-btn").hide();
-                },
-                error:function(jqXHR){
-                    alert("发生错误："+jqXHR.status);
-                    // 在控制台输出错误信息
-                    console.log(removeHTMLTag(jqXHR.responseText));
-                }
-            })
-        })
-    })
-</script>
 <script type="text/javascript">
             // 过滤HTML标签以及&nbsp 来自：http://www.cnblogs.com/liszt/archive/2011/08/16/2140007.html
             function removeHTMLTag(str) {
