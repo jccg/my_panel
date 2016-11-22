@@ -118,7 +118,17 @@ class Ss {
     
     //add time 添加有效期
     function  add_time($money){
-        $all_time = $this->get_expire_time()+$money;
+		$now_time;
+		$db_exp_time = $this->get_expire_time();
+		if($db_exp_time < time())
+		{
+			$now_time = time();
+		}
+		else{
+			$now_time = $db_exp_time;
+		}
+		
+        $all_time = $now_time + $money;
         $this->db->update("user",[
             "expire_time" => $all_time
         ],[
