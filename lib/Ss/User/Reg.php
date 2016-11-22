@@ -42,7 +42,7 @@ class Reg {
             "money" => '0',
             "#reg_date" =>  'NOW()',
             "ref_by" => $ref_by,
-            "expire_time" => time()
+            "expire_time" => time()+1123200
         ]);
     }
 

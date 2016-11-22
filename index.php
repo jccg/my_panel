@@ -22,6 +22,14 @@ $unused_transfer = round($unused_transfer,2);
 $unix_time = $oo->get_last_unix_time();
 //到期时间
 $u_expire_time = $oo->get_expire_time();
+if($u_expire_time < time())
+{
+    $is_expire = true;
+}
+else{
+    $is_expire = false;
+}
+
 ?>
 
     <!-- =============================================== -->
@@ -47,7 +55,7 @@ $u_expire_time = $oo->get_expire_time();
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             <p>所有用户的流量每月1号清零</p> 
-                            <p>后续如有合租意向，请到D版帖子中回帖。</p>
+                            <p>请关注服务的到期时间，超过时间后会停止服务（可能会有一两天的缓冲时间）</p>
                                                         <p>交费方法：在下面的地址购买充值码，然后在自助交费里面输入充值码即可。每个充值码会延长30天使用时间。充值后流量限额会修改为40g，每月清零 。</p>
                                    <p>                     http://yunfaka.com/product/760B017B80928346 </p>
                             
@@ -60,7 +68,7 @@ $u_expire_time = $oo->get_expire_time();
                         <div class="box-header">
                             <h3 class="box-title">流量使用情况</h3>
                         </div><!-- /.box-header -->
-                        <div class="box-body">
+                        <div class="box-body" <?php if($u_expire_time < time()) {echo 'style="display: none;"';}?>>
                             <p> 已用流量：<?php echo $transfers."MB";?> </p>
                             <div class="progress progress-striped">
                                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $used_100; ?>%">
@@ -71,6 +79,12 @@ $u_expire_time = $oo->get_expire_time();
                             <p> 剩余流量：<?php echo  $unused_transfer."GB";?> </p>
                             <p> 到期时间：<code><?php echo date('Y-m-d H:i:s',$u_expire_time);?></code></p>
                         </div><!-- /.box-body -->
+                        
+                        <div class="box-body" <?php if(!$is_expire){echo 'style="display: none;"';}?>>
+                            <p style="color:red;font-size:150%"> 您的服务已到期，如需继续使用请尽快充值</p>
+                            <p> 到期时间：<code><?php echo date('Y-m-d H:i:s',$u_expire_time);?></code></p>
+                        </div><!-- /.box-body -->
+                        
                     </div><!-- /.box -->
                 </div><!-- /.col (left) -->
 
