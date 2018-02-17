@@ -115,6 +115,19 @@ class Ss {
             "uid" => $this->uid
         ]);
     }
+	
+	    //update ss plan
+    function update_ss_plan_ots($plan, $trans){
+		$tomb = 1024*1024;
+		$togb = $tomb*1024;
+		$alltransfer = $trans*$togb;
+        $this->db->update("user",[
+            "plan" => $plan,
+            "transfer_enable" => $alltransfer
+        ],[
+            "uid" => $this->uid
+        ]);
+    }
     
     //add time 添加有效期
     function  add_time($money){

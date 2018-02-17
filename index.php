@@ -54,13 +54,21 @@ else{
                             <h3 class="box-title">公告&FAQ</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
+							<p style="color:red;font-size:150%"> 预计3月初会上一个目前最佳的香港线路，100M带宽，质量很好，价格很贵。近期也会增加自助切换套餐的功能。希望大家帮忙在朋友间推广一下，用的人多才能有更稳定更优质的线路。谢谢大家~</p>
+						    <p> 账号闲置一段时间不续费的账号，被被系统清理掉。由于精力有限，不提供安装和使用的技术支持，遇到网络问题可以随时联系我。</p>
+
+                            <p>使用线路1（动态线路）会自动选择最优节点，不需要手动修改，如果速度慢可以告诉我。</p> 
                             <p>所有用户的流量每月1号清零</p> 
-                            <p>请关注服务的到期时间，超过时间后会停止服务（可能会有一两天的缓冲时间）</p>
-                                                        <p>交费方法：在下面的地址购买充值码，然后在自助交费里面输入充值码即可。每个充值码会延长30天使用时间。充值后流量限额会修改为40g，每月清零 。</p>
-                                   <p>                     http://yunfaka.com/product/760B017B80928346 </p>
-                            
+                                                        <p>交费方法：在下面的地址购买充值码，然后在自助交费里面输入充值码即可。每个充值码会延长对应的使用时间。充值后流量限额会修改为套餐对应的流量，每月清零 。</p>
+                                   <p>             充值码购买地址（2元 12元 24元）&nbsp    http://pay.whybuy.cc/ </p>
+								   <p>				备用购买地址（只支持购买12元的）&nbsp	http://t.cn/Rf8MzJZ</p>
+                                    <p> 如果觉得目前的流量不够用，有大流量需求的话可以联系我，可以修改为每月6块钱100g，或者其他方案</p>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
+                    
+                    
+                    
+                    
                 </div><!-- /.col (right) -->
 
                 <div class="col-md-6">
@@ -96,7 +104,27 @@ else{
                         <div class="box-body">
                             <p> 端口：<code><?php echo $oo->get_port();?></code> </p>
                             <p> 密码：<?php echo $oo->get_pass();?> </p>
-                            <p> 套餐：<span class="label label-info"> <?php echo $oo->get_plan();?> </span> </p>
+                            <?php 
+                            $plandesc = "特殊定制";
+                            if($oo->get_plan() == 'A')
+                            {
+                                $plandesc = "免费测试";
+                            }
+                            elseif($oo->get_plan() == 'C')
+                            {
+                                $plandesc = "2元每月40g";
+                            }
+                            elseif($oo->get_plan() == 'E')
+                            {
+                                $plandesc = "6元每月100g";
+                            }
+							elseif($oo->get_plan() == 'F')
+                            {
+                                $plandesc = "8元每月140g";
+                            }
+							
+							?>
+                            <p> 套餐：<span class="label label-info"> <?php echo $oo->get_plan()."套餐: ".$plandesc;?> </span> </p>
                             <p> 最后使用时间：<code><?php echo date('Y-m-d H:i:s',$unix_time);  ?></code> </p>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
@@ -118,3 +146,4 @@ require_once '_footer.php'; ?>
                     return str;
             }
 </script>
+
