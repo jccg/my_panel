@@ -192,4 +192,21 @@ class Ss {
         return $this->getTransferEnable()-$this->getUsedTransfer();
     }
 
+    //add time 更新有效期
+    function  updata_time($money){
+        $this->db->update("user",[
+            "expire_time" => $money
+        ],[
+            "uid" => $this->uid
+        ]);
+    }
+
+    //add 更新最后一次升级套餐时间
+    function update_ss_plan_ch(){
+        $this->db->update("user",[
+            "plan_ch_time" => time()
+        ],[
+            "uid" => $this->uid
+        ]);
+    }
 }

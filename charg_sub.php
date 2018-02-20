@@ -1,6 +1,8 @@
 <?php
 //引入配置文件
 require_once './lib/config.php';
+require_once '_check.php';
+
 $num  = $_POST['code_num'];
 $uid  = $_POST['uid'];
 
