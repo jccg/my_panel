@@ -41,12 +41,19 @@ if(($vartt > 0)&& ($varst == 0)){
         $dd->UpdateStatus($uid);
 		$c->update_ss_plan_ots('E', 100);
     }
-	elseif($c->get_plan() == 'F')
+    elseif($c->get_plan() == 'F')
     {
         //8元140g用户,12元1.5个月
         $c->add_time(ceil($vartt/4));
         $dd->UpdateStatus($uid);
 		$c->update_ss_plan_ots('F', 140);
+    }
+    elseif($c->get_plan() == 'G')
+    {
+        //10元180g用户,12元1.2个月
+        $c->add_time(ceil($vartt/5));
+        $dd->UpdateStatus($uid);
+		$c->update_ss_plan_ots('G', 180);
     }
 }else{
     echo ' <script>alert("CODE ERROR，充值码错误!")</script> ';
